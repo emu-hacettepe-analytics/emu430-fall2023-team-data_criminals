@@ -13,7 +13,7 @@ This is our template.
 
 1.  [Mehmet Akif Özbakır](https://emu-hacettepe-analytics.github.io/emu430-fall2023-makifozbakr/)
 
-2.  [Mehdi Çanakçı](https://tr.wikipedia.org/wiki/Du%C5%A1an_Tadi%C4%87)
+2.  [Mehti Çanakçı](https://emu-hacettepe-analytics.github.io/emu430-fall2023-mehticanakci/)
 
 3.  [Emir Taşoğlu](https://tr.wikipedia.org/wiki/Fred_(1993_do%C4%9Fumlu_futbolcu))
 
