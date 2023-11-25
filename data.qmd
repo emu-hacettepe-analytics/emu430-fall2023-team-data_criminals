@@ -12,9 +12,10 @@ We will understand the relationship between education and crime. By analyzing th
 Our preliminary plans include:
 
 We will import the data set into R and perform any necessary cleaning and data preparation steps. We will visualize the data using various plots and charts to gain an initial understanding of the distribution of variables and the relationships between them. We will interpret the results of the analysis and communicate the findings in a clear and concise manner.
+We have two main data sources. One of them comes from https://biruni.tuik.gov.tr/medas/?kn=90&locale=tr web site. Thanks to this site we can contact a data base which take necessary command according to data base's variable than turns a file which is excel format. Other one is an excel file which include information about crime types and number of convicts according to crime type. After some arrangement (cleaning, combining etc.) we collected our data in a excel file.
 
 # How Import Data:
-
+We have to main data 
 # Store Dataset:
 
 # Exploratory Data Analysis:
