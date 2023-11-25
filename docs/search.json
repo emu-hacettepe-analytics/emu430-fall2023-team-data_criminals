@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Team XXX",
+    "title": "Team data_criminals",
     "section": "",
-    "text": "This is our project webpage.\nPlease stay tuned to follow our project activities.\nThis is our template.\n\nTeam Members\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański\n\n\n\nProject Topic\n\n\nData Set\n\n\n\n\n Back to top"
+    "text": "This is our project webpage.\nPlease stay tuned to follow our project activities.\nThis is our template.\n\nTeam Members\n\nMehmet Akif Özbakır\nMehdi Çanakçı\nEmir Taşoğlu\n\n\n\nProject Topic\nUnderstand the relationship between education and crime.\n\n\nData Set\nConvicts Received Into Prison by Type of Crime and Educational Status\nWebsite : https://data.tuik.gov.tr/\n\n\n\n\n Back to top"
   },
   {
     "objectID": "about.html",
@@ -25,6 +25,41 @@
     "href": "data.html",
     "title": "Data",
     "section": "",
-    "text": "Data source: xxx\n\n\n\n Back to top"
+    "text": "Data Source:\nThe dataset, sourced from TUIK, covers convicts received into prison across Turkey between 2011 and 2020. It includes information on the type of crime committed and the educational status of the convicts. We chose this dataset because of its potential to unveil the connection between educational background and criminal behavior. Understanding how different types of crimes correlate with varying levels of education is essential for crafting targeted interventions.\nOur objectives include:\nWe will understand the relationship between education and crime. By analyzing the data set, we will gain insights into how educational attainment influences the likelihood of incarceration. We will develop proficiency in data manipulation and analysis using R. We will learn how to import, clean, transform, and visualize data using R’s built-in functions and libraries. We enhance critical thinking and problem-solving skills. We will apply their knowledge of R programming to draw meaningful conclusions from the data.\nOur preliminary plans include:\nWe will import the data set into R and perform any necessary cleaning and data preparation steps. We will visualize the data using various plots and charts to gain an initial understanding of the distribution of variables and the relationships between them. We will interpret the results of the analysis and communicate the findings in a clear and concise manner.\n\n\nHow Import Data:\n\n\nStore Dataset:\n\n\nExploratory Data Analysis:\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "data.html#how-import-data",
+    "href": "data.html#how-import-data",
+    "title": "Data",
+    "section": "How Import Data:",
+    "text": "How Import Data:"
+  },
+  {
+    "objectID": "data.html#store-dataset",
+    "href": "data.html#store-dataset",
+    "title": "Data",
+    "section": "Store Dataset:",
+    "text": "Store Dataset:"
+  },
+  {
+    "objectID": "data.html#exploratory-data-analysis",
+    "href": "data.html#exploratory-data-analysis",
+    "title": "Data",
+    "section": "Exploratory Data Analysis:",
+    "text": "Exploratory Data Analysis:"
+  },
+  {
+    "objectID": "data.html#objectives",
+    "href": "data.html#objectives",
+    "title": "Data",
+    "section": "",
+    "text": "We will understand the relationship between education and crime. By analyzing the data set, we will gain insights into how educational attainment influences the likelihood of incarceration. We will develop proficiency in data manipulation and analysis using R. We will learn how to import, clean, transform, and visualize data using R’s built-in functions and libraries. We enhance critical thinking and problem-solving skills. We will apply their knowledge of R programming to draw meaningful conclusions from the data."
+  },
+  {
+    "objectID": "data.html#preliminary-plan",
+    "href": "data.html#preliminary-plan",
+    "title": "Data",
+    "section": "",
+    "text": "We will import the data set into R and perform any necessary cleaning and data preparation steps. We will visualize the data using various plots and charts to gain an initial understanding of the distribution of variables and the relationships between them. We will interpret the results of the analysis and communicate the findings in a clear and concise manner."
   }
 ]

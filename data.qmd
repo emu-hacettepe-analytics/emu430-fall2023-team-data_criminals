@@ -2,4 +2,19 @@
 title: "Data"
 ---
 
-Data source: xxx
+# Data Source:
+The dataset, sourced from TUIK, covers convicts received into prison across Turkey between 2011 and 2020. It includes information on the type of crime committed and the educational status of the convicts. We chose this dataset because of its potential to unveil the connection between educational background and criminal behavior. Understanding how different types of crimes correlate with varying levels of education is essential for crafting targeted interventions.
+
+Our objectives include:
+
+We will understand the relationship between education and crime. By analyzing the data set, we will gain insights into how educational attainment influences the likelihood of incarceration. We will develop proficiency in data manipulation and analysis using R. We will learn how to import, clean, transform, and visualize data using R's built-in functions and libraries. We enhance critical thinking and problem-solving skills. We will apply their knowledge of R programming to draw meaningful conclusions from the data.
+
+Our preliminary plans include:
+
+We will import the data set into R and perform any necessary cleaning and data preparation steps. We will visualize the data using various plots and charts to gain an initial understanding of the distribution of variables and the relationships between them. We will interpret the results of the analysis and communicate the findings in a clear and concise manner.
+
+# How Import Data:
+
+# Store Dataset:
+
+# Exploratory Data Analysis:

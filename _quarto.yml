@@ -3,8 +3,9 @@ project:
   output-dir: docs
 
 website:
-  title: "xxx' Project Lab"
+  title: "data_criminal's Project Lab"
   navbar:
+    background: "green"
     search: true
     left:
       - text: Home
@@ -18,6 +19,10 @@ website:
     tools:
       - icon: github
         href: https://twitter.com
+      - icon: instagram
+        href: https://twitter.com
+      - icon: linkedin
+        href: https://twitter.com 
 
   page-navigation: true
   back-to-top-navigation: true
