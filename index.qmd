@@ -22,7 +22,7 @@ This is our template.
 Understand the relationship between education and crime.
 
 # Data Set
-Convicts Received Into Prison by Type of Crime and Educational Status
+Convicts Received Into Prison by Educational Status
 
 Website : https://data.tuik.gov.tr/
-
+          https://biruni.tuik.gov.tr/medas/?kn=90&locale=tr
