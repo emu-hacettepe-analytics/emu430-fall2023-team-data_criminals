@@ -13,9 +13,9 @@ This is our template.
 
 1.  [Mehmet Akif Özbakır](https://emu-hacettepe-analytics.github.io/emu430-fall2023-makifozbakr/)
 
-2.  [Mehdi Çanakçı](https://tr.wikipedia.org/wiki/Du%C5%A1an_Tadi%C4%87)
+2.  [Mehdi Çanakçı](https://emu-hacettepe-analytics.github.io/emu430-fall2023-mehticanakci/)
 
-3.  [Emir Taşoğlu](https://tr.wikipedia.org/wiki/Fred_(1993_do%C4%9Fumlu_futbolcu))
+3.  [Emir Taşoğlu](https://emu-hacettepe-analytics.github.io/emu430-fall2023-emirtasoglu/)
 
 
 # Project Topic
@@ -24,5 +24,5 @@ Understand the relationship between education and crime.
 # Data Set
 Convicts Received Into Prison by Type of Crime and Educational Status
 
-Website : https://data.tuik.gov.tr/
+Website : https://data.tuik.gov.tr/ and https://biruni.tuik.gov.tr/
 
