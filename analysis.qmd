@@ -2,7 +2,7 @@
 title: "Analysis"
 ---
 
-About this site
+About this site. Analysis.
 
 ```{r}
 1 + 1

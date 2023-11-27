@@ -13,11 +13,9 @@ This is our template.
 
 1.  [Mehmet Akif Özbakır](https://emu-hacettepe-analytics.github.io/emu430-fall2023-makifozbakr/)
 
-<<<<<<< HEAD
+
 2.  [Mehdi Çanakçı](https://emu-hacettepe-analytics.github.io/emu430-fall2023-mehticanakci/)
-=======
-2.  [Mehti Çanakçı](https://emu-hacettepe-analytics.github.io/emu430-fall2023-mehticanakci/)
->>>>>>> 75d25f10c9e22403739b89f1495463ac375b4fa1
+
 
 3.  [Emir Taşoğlu](https://emu-hacettepe-analytics.github.io/emu430-fall2023-emirtasoglu/)
 
@@ -26,12 +24,6 @@ This is our template.
 Understand the relationship between education and crime.
 
 # Data Set
-<<<<<<< HEAD
 Convicts Received Into Prison by Type of Crime and Educational Status
 
 Website : https://data.tuik.gov.tr/ and https://biruni.tuik.gov.tr/
-=======
-Convicts Received Into Prison by Educational Status
->>>>>>> 75d25f10c9e22403739b89f1495463ac375b4fa1
-
-Website : https://data.tuik.gov.tr/ and https://biruni.tuik.gov.tr/medas/?kn=90&locale=tr
