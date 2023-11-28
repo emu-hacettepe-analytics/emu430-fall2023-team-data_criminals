@@ -47,4 +47,5 @@ Our data set consists of 31 rows and 9 columns. Each line represents the years b
 Educational status are listed as follows:
 
 Illiterate,	Literate but not Graduated from a School, Primary School, Primary Education, Junior High School and Vocational School at Junior High School Level, High School and Vocational School at High School Level, Higher Education and Unknown.
-There is no data between 1990-2002 in the primary education column. Likewise, there is no data between 1990-2028 in the unknown column.
+
+There is no data between 1990-2002 in the "Primary Education" column. Likewise, there is no data between 1990-2028 in the "Unknown" column.
