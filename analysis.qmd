@@ -3,11 +3,10 @@ title: "Analysis"
 sidebar: false
 ---
 
-**ARE THE CONVICTS WELL EDUCATED?**
 
 -   ARE THE CONVICTS WELL EDUCATED?
 
--   IS THERE INCREASE TREND IN SPECIFIC PRIODS FOR SPECIFIC GROUPS?
+-   IS THERE INCREASE TREND IN SPECIFIC PERIODS FOR SPECIFIC GROUPS?
 
 -   WHY DO WE SEE FLUCTUATION IN SOME GROUP?
 
@@ -17,7 +16,11 @@ In our society and through world there is a belief which claims convicts have lo
 library(tidyverse)
 load("~/Github/emu430-fall2023-team-data_criminals/data_criminals.RData")
 average_illiterate=mean(data_criminals$Illiterate)
-ggplot(data_criminals,aes(...1,Illiterate))+geom_point(color="green")+theme(axis.text.x = element_text(angle = 90, hjust = 1))+labs(title = "Illiterate over Years", x = "Years", y = "Number of Illiterates")+geom_hline(yintercept = average_illiterate, col = "green")
+ggplot(data_criminals,aes(...1,Illiterate))+
+  geom_point(color="green")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(title = "Illiterate over Years", x = "Years", y = "Number of Illiterates")+
+  geom_hline(yintercept = average_illiterate, col = "green")
 
 ```
 
@@ -25,7 +28,10 @@ As seen on the plot between 1997-2004 years there is a increase trend and in 201
 
 ```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}
 average_literates=mean(data_criminals$`Literate but not Graduated from a School`)
-ggplot(data_criminals,aes(...1,data_criminals$`Literate but not Graduated from a School` ))+geom_point(color="red")+theme(axis.text.x = element_text(angle = 90, hjust = 1))+labs(title = "Literate over Years", x = "Years", y = "Number of Literates")+geom_hline(yintercept = average_literates, col = "red")
+ggplot(data_criminals,aes(...1,data_criminals$`Literate but not Graduated from a School` ))+
+  geom_point(color="red")+theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(title = "Literate over Years", x = "Years", y = "Number of Literates")+
+  geom_hline(yintercept = average_literates, col = "red")
 
 ```
 
@@ -35,28 +41,44 @@ When we look at the number of literates who have not graduated from a school, we
 data_criminals$`Primary Education`[is.na(data_criminals$`Primary Education`)] <- 0
 p=data_criminals%>% mutate(Primary=`Primary School`+`Primary Education`)
 average_primary=mean(p$Primary)
-ggplot(p,aes(...1,Primary))+geom_point(color="brown")+theme(axis.text.x = element_text(angle = 90, hjust = 1))+labs(title = "Number of Graduated from Primary School or Education over Years", x = "Years", y = "Number of Primary Education or Primary Scool")+geom_hline(yintercept = average_primary, col = "brown")
+ggplot(p,aes(...1,Primary))+
+  geom_point(color="brown")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(title = "Number of Graduated from Primary School or Education over Years", x = "Years", y = "Number of Primary Education or Primary Scool")+
+  geom_hline(yintercept = average_primary, col = "brown")
 ```
 
 In our data frame Primary Education and Primary School has 2 different column. We combined two column into one column as Primary. We can see fluctuation over years and increase after 2016. Most probably, sharp decline after 2018 results from regulation in execution law because of COVID-19 pandemic. This group has the highest average.
 
-```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}
+```{r echo=T, error=FALSE, message=FALSE, warning=FALSE, results='hide'}
 average_junior_high_school=mean(data_criminals$`Junior High School and Vocational School at Junior High School Level`)
-ggplot(data_criminals,aes(...1,data_criminals$`Junior High School and Vocational School at Junior High School Level`))+geom_point(color="black")+theme(axis.text.x = element_text(angle = 90, hjust = 1))+labs(title = "Junior High School over Years", x = "Years", y = "Number of Junior High School")+geom_hline(yintercept = average_junior_high_school, col = "black")
+ggplot(data_criminals,aes(...1,data_criminals$`Junior High School and Vocational School at Junior High School Level`))+
+  geom_point(color="black")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(title = "Junior High School over Years", x = "Years", y = "Number of Junior High School")+
+  geom_hline(yintercept = average_junior_high_school, col = "black")
 ```
 
 As seen on the table there is an increase trend after 2016. Their average is at the highest forth.
 
 ```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}
 average_high_school=mean(data_criminals$`High School and Vocational School at High School Level`)
-ggplot(data_criminals,aes(...1,data_criminals$`High School and Vocational School at High School Level`))+geom_point(color="purple")+theme(axis.text.x = element_text(angle = 90, hjust = 1))+labs(title = "High School over Years", x = "Years", y = "Number of Convict Graduated from High School")+geom_hline(yintercept = average_junior_high_school, col = "purple")
+ggplot(data_criminals,aes(...1,data_criminals$`High School and Vocational School at High School Level`))+
+  geom_point(color="purple")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(title = "High School over Years", x = "Years", y = "Number of Convict Graduated from High School")+
+  geom_hline(yintercept = average_junior_high_school, col = "purple")
 ```
 
 Like junior high school numbers, convicts graduated from high school has an increase trend after 2011. Their average is at the highest 5.
 
 ```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}
 average_higher_edu=mean(data_criminals$`Higher Education`)
-ggplot(data_criminals,aes(...1,data_criminals$`Higher Education`))+geom_point(color="blue")+theme(axis.text.x = element_text(angle = 90, hjust = 1))+labs(title = "Higher Education over Years", x = "Years", y = "Number of Convicts with Higher Education")+geom_hline(yintercept =average_higher_edu , col = "blue")
+ggplot(data_criminals,aes(...1,data_criminals$`Higher Education`))+
+  geom_point(color="blue")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(title = "Higher Education over Years", x = "Years", y = "Number of Convicts with Higher Education")+
+  geom_hline(yintercept =average_higher_edu , col = "blue")
 
 ```
 

@@ -1,6 +1,6 @@
 ---
 title: "Team data_criminals"
-sidebar: false 
+sidebar: false
 ---
 
 This is our project webpage.
