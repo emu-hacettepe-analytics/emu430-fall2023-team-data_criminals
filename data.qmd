@@ -1,15 +1,5 @@
 ---
-title: "Team XXX"
-sidebar: false
-format:
-  docx:
-    colorlinks: true
-    papersize: a4
-    fontsize: 11pt
-    margin-left: 2cm
-    margin-right: 2cm
-    margin-top: 2cm
-    margin-bottom: 2cm
+title: "Data"
 ---
 
 # Data Source:
