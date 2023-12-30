@@ -1,6 +1,6 @@
 ---
 title: "Data"
-sidebar: false 
+sidebar: false
 ---
 
 # Data Source:
