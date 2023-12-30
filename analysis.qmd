@@ -13,7 +13,8 @@ title: "Analysis"
 In our society and through world there is a belief which claims convicts have low educational level. According to this belief, thanks to education, some values can be gained by children during school years. Is it really so? In this work we want to show some analysis and illuminate if there is a correlation between education level and probability of committing a crime with the data of TÜİK which include education level of convicts of Turkish prisons between 1990-2020. Our data include education level as variable (Illiterate, Literate but not Graduated from a school, Primary School, Primary Education, Junior High School and Vocational School at High School Level, Higher Education, Unknown) and years 1990-2020 as observations. Lines in each plot which are parallel to x axis point out average value of table's observations.
 
 ```{r}
-data_criminals
+library(tidyverse)
+load("~/Github/emu430-fall2023-team-data_criminals/data_criminals.RData")
 average_illiterate=mean(data_criminals$Illiterate)
 ggplot(data_criminals,aes(...1,Illiterate))+geom_point(color="green")+theme(axis.text.x = element_text(angle = 90, hjust = 1))+labs(title = "Illiterate over Years", x = "Years", y = "Number of Illiterates")+geom_hline(yintercept = average_illiterate, col = "green")
 
@@ -78,7 +79,8 @@ barplot(vec,main = "Number of Convicts to Education Level ", xlab = "Education L
 ```
 
 ```{r}
-pie(vec, labels = piepercent, main="Pie Chart of Convicts" ,col = rainbow(length(vec)))
+rates_of=c("1.7","4.6","58.8","14.1","16.8","4")
+pie(vec, labels = rates_of, main="Pie Chart of Convicts" ,col = rainbow(length(vec)))
 legend("topright", names_vec, cex = 0.8,
    fill = rainbow(length(vec)))
 ```
