@@ -130,10 +130,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Analysis</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto tools-wide">
-    <a href="https://twitter.com" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-    <a href="https://twitter.com" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-instagram"></i></a>
-    <a href="https://twitter.com" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+            <div class="quarto-navbar-tools ms-auto">
+    <a href="https://github.com/emu-hacettepe-analytics/emu430-fall2023-team-data_criminals" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           </div> <!-- /navcollapse -->
@@ -155,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysis</h1>
+<div class="quarto-title-block"><div><h1 class="title">Analysis</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -177,6 +175,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>In our society and through world there is a belief which claims convicts have low educational level. According to this belief, thanks to education, some values can be gained by children during school years. Is it really so? In this work we want to show some analysis and illuminate if there is a correlation between education level and probability of committing a crime with the data of TÜİK which include education level of convicts of Turkish prisons between 1990-2020. Our data include education level as variable (Illiterate, Literate but not Graduated from a school, Primary School, Primary Education, Junior High School and Vocational School at High School Level, Higher Education, Unknown) and years 1990-2020 as observations. Lines in each plot which are parallel to x axis point out average value of table’s observations.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"~/Github/emu430-fall2023-team-data_criminals/data_criminals.RData"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>average_illiterate<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span>Illiterate)</span>
@@ -185,23 +185,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Illiterate over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Illiterates"</span>)<span class="sc">+</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_illiterate, <span class="at">col =</span> <span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>As seen on the plot between 1997-2004 years there is a increase trend and in 2010, 2011, 2012 are lowest numbers for illiterate. We can see fluctuation over the years and interestingly compared to other education levels, number of illiterates has lowest average. Rates of illiterates of Turkey is important to make a interpretation and it is subject of another research. Our data provide only education level of convicts.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>average_literates<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Literate but not Graduated from a School</span><span class="st">`</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_criminals,<span class="fu">aes</span>(...<span class="dv">1</span>,data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Literate but not Graduated from a School</span><span class="st">`</span> ))<span class="sc">+</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Literate over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Literates"</span>)<span class="sc">+</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_literates, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>When we look at the number of literates who have not graduated from a school, we can see increase after 2009 and their average find its position at third.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Primary Education</span><span class="st">`</span>[<span class="fu">is.na</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Primary Education</span><span class="st">`</span>)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span>data_criminals<span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Primary=</span><span class="st">`</span><span class="at">Primary School</span><span class="st">`</span><span class="sc">+</span><span class="st">`</span><span class="at">Primary Education</span><span class="st">`</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>average_primary<span class="ot">=</span><span class="fu">mean</span>(p<span class="sc">$</span>Primary)</span>
@@ -210,42 +216,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Graduated from Primary School or Education over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Primary Education or Primary Scool"</span>)<span class="sc">+</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_primary, <span class="at">col =</span> <span class="st">"brown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>In our data frame Primary Education and Primary School has 2 different column. We combined two column into one column as Primary. We can see fluctuation over years and increase after 2016. Most probably, sharp decline after 2018 results from regulation in execution law because of COVID-19 pandemic. This group has the highest average.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>average_junior_high_school<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Junior High School and Vocational School at Junior High School Level</span><span class="st">`</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_criminals,<span class="fu">aes</span>(...<span class="dv">1</span>,data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Junior High School and Vocational School at Junior High School Level</span><span class="st">`</span>))<span class="sc">+</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Junior High School over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Junior High School"</span>)<span class="sc">+</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_junior_high_school, <span class="at">col =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>As seen on the table there is an increase trend after 2016. Their average is at the highest forth.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>average_high_school<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">High School and Vocational School at High School Level</span><span class="st">`</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_criminals,<span class="fu">aes</span>(...<span class="dv">1</span>,data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">High School and Vocational School at High School Level</span><span class="st">`</span>))<span class="sc">+</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"purple"</span>)<span class="sc">+</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"High School over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Convict Graduated from High School"</span>)<span class="sc">+</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_junior_high_school, <span class="at">col =</span> <span class="st">"purple"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Like junior high school numbers, convicts graduated from high school has an increase trend after 2011. Their average is at the highest 5.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>average_higher_edu<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Higher Education</span><span class="st">`</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_criminals,<span class="fu">aes</span>(...<span class="dv">1</span>,data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Higher Education</span><span class="st">`</span>))<span class="sc">+</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"blue"</span>)<span class="sc">+</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Higher Education over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Convicts with Higher Education"</span>)<span class="sc">+</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span>average_higher_edu , <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -254,6 +270,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>As we see in last three plot, there is a increase for Higher Education, High School and Junior High School after 2016. After failed coup attempt in 2016, many people were arrested because of political issues and it can be seen in plots. Fluctuation in some group can be seen in some plot. These fluctuations results from regulation in execution law, regulation in criminal law or probation.</p>
 <p>Plot shown above does not reflect result of our main objective. We want to illuminate correlation between education level and crime in Turkey prisons. Below you can see total number of each education level and their Pie chart presentation.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>total_ill<span class="ot">=</span><span class="fu">sum</span>(data_criminals<span class="sc">$</span>Illiterate)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>total_lit<span class="ot">=</span><span class="fu">sum</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Literate but not Graduated from a School</span><span class="st">`</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>total_pri<span class="ot">=</span><span class="fu">sum</span>(p<span class="sc">$</span>Primary)</span>
@@ -264,21 +282,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>names_vec<span class="ot">=</span><span class="fu">c</span>(<span class="st">"Illiterate"</span>,<span class="st">"Literate"</span>,<span class="st">"Primary"</span>,<span class="st">"J High"</span>,<span class="st">"High Sch"</span>,<span class="st">"High Edu"</span>)</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(vec)<span class="ot">=</span>names_vec</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(vec,<span class="at">main =</span> <span class="st">"Number of Convicts to Education Level "</span>, <span class="at">xlab =</span> <span class="st">"Education Level"</span>, <span class="at">ylab =</span> <span class="st">"Number of Convicts"</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>rates_of<span class="ot">=</span><span class="fu">c</span>(<span class="st">"1.7"</span>,<span class="st">"4.6"</span>,<span class="st">"58.8"</span>,<span class="st">"14.1"</span>,<span class="st">"16.8"</span>,<span class="st">"4"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(vec, <span class="at">labels =</span> rates_of, <span class="at">main=</span><span class="st">"Pie Chart of Convicts"</span> ,<span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(vec)))</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, names_vec, <span class="at">cex =</span> <span class="fl">0.8</span>,</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">fill =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(vec)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>As shown on both presentation, convicts education levels and their numbers between 1990-2020 according to TÜİK’s data, More than half of convicts has primary education. Illiterate and literate convicts make up only %6,3 of total number. Convicts, who have higher education, has only %4 and junior high school, high school have %14.1 %16.8 respectively. In order to be able to say that education level and probability to commit a crime inversely proportional we need more evidence. Proportions of education levels in society for each year can be useful for deep analytics. For example; what the rate of illiterate people of society for 1995 is can be helpful. Of course these are TÜİK’s data which calculated 2023’s inflation rate as %61,98. As Stalin said “The death of one person is a tragedy, the death of millions is a statistic” and everyone is a little bit manipulative.</p>
 
+
+<!-- -->
 
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -476,6 +500,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -629,7 +704,124 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Analysis"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">sidebar:</span><span class="co"> false</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Show the code"</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>ARE THE CONVICTS WELL EDUCATED?</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>IS THERE INCREASE TREND IN SPECIFIC PERIODS FOR SPECIFIC GROUPS?</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>WHY DO WE SEE FLUCTUATION IN SOME GROUP?</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>In our society and through world there is a belief which claims convicts have low educational level. According to this belief, thanks to education, some values can be gained by children during school years. Is it really so? In this work we want to show some analysis and illuminate if there is a correlation between education level and probability of committing a crime with the data of TÜİK which include education level of convicts of Turkish prisons between 1990-2020. Our data include education level as variable (Illiterate, Literate but not Graduated from a school, Primary School, Primary Education, Junior High School and Vocational School at High School Level, Higher Education, Unknown) and years 1990-2020 as observations. Lines in each plot which are parallel to x axis point out average value of table's observations.</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"~/Github/emu430-fall2023-team-data_criminals/data_criminals.RData"</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>average_illiterate<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span>Illiterate)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_criminals,<span class="fu">aes</span>(...<span class="dv">1</span>,Illiterate))<span class="sc">+</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"green"</span>)<span class="sc">+</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Illiterate over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Illiterates"</span>)<span class="sc">+</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_illiterate, <span class="at">col =</span> <span class="st">"green"</span>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>As seen on the plot between 1997-2004 years there is a increase trend and in 2010, 2011, 2012 are lowest numbers for illiterate. We can see fluctuation over the years and interestingly compared to other education levels, number of illiterates has lowest average. Rates of illiterates of Turkey is important to make a interpretation and it is subject of another research. Our data provide only education level of convicts.</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>average_literates<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Literate but not Graduated from a School</span><span class="st">`</span>)</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_criminals,<span class="fu">aes</span>(...<span class="dv">1</span>,data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Literate but not Graduated from a School</span><span class="st">`</span> ))<span class="sc">+</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Literate over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Literates"</span>)<span class="sc">+</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_literates, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>When we look at the number of literates who have not graduated from a school, we can see increase after 2009 and their average find its position at third.</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Primary Education</span><span class="st">`</span>[<span class="fu">is.na</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Primary Education</span><span class="st">`</span>)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span>data_criminals<span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Primary=</span><span class="st">`</span><span class="at">Primary School</span><span class="st">`</span><span class="sc">+</span><span class="st">`</span><span class="at">Primary Education</span><span class="st">`</span>)</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>average_primary<span class="ot">=</span><span class="fu">mean</span>(p<span class="sc">$</span>Primary)</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(p,<span class="fu">aes</span>(...<span class="dv">1</span>,Primary))<span class="sc">+</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"brown"</span>)<span class="sc">+</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Graduated from Primary School or Education over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Primary Education or Primary Scool"</span>)<span class="sc">+</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_primary, <span class="at">col =</span> <span class="st">"brown"</span>)</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>In our data frame Primary Education and Primary School has 2 different column. We combined two column into one column as Primary. We can see fluctuation over years and increase after 2016. Most probably, sharp decline after 2018 results from regulation in execution law because of COVID-19 pandemic. This group has the highest average.</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r echo=T, error=FALSE, message=FALSE, warning=FALSE, results='hide'}</span></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>average_junior_high_school<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Junior High School and Vocational School at Junior High School Level</span><span class="st">`</span>)</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_criminals,<span class="fu">aes</span>(...<span class="dv">1</span>,data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Junior High School and Vocational School at Junior High School Level</span><span class="st">`</span>))<span class="sc">+</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"black"</span>)<span class="sc">+</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Junior High School over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Junior High School"</span>)<span class="sc">+</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_junior_high_school, <span class="at">col =</span> <span class="st">"black"</span>)</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>As seen on the table there is an increase trend after 2016. Their average is at the highest forth.</span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>average_high_school<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">High School and Vocational School at High School Level</span><span class="st">`</span>)</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_criminals,<span class="fu">aes</span>(...<span class="dv">1</span>,data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">High School and Vocational School at High School Level</span><span class="st">`</span>))<span class="sc">+</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"purple"</span>)<span class="sc">+</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"High School over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Convict Graduated from High School"</span>)<span class="sc">+</span></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> average_junior_high_school, <span class="at">col =</span> <span class="st">"purple"</span>)</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>Like junior high school numbers, convicts graduated from high school has an increase trend after 2011. Their average is at the highest 5.</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>average_higher_edu<span class="ot">=</span><span class="fu">mean</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Higher Education</span><span class="st">`</span>)</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_criminals,<span class="fu">aes</span>(...<span class="dv">1</span>,data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Higher Education</span><span class="st">`</span>))<span class="sc">+</span></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"blue"</span>)<span class="sc">+</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Higher Education over Years"</span>, <span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Number of Convicts with Higher Education"</span>)<span class="sc">+</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span>average_higher_edu , <span class="at">col =</span> <span class="st">"blue"</span>)</span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>Like High School there is a over-increase in the number of convicts who has higher education after 2016.</span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>As we see in last three plot, there is a increase for Higher Education, High School and Junior High School after 2016. After failed coup attempt in 2016, many people were arrested because of political issues and it can be seen in plots. Fluctuation in some group can be seen in some plot. These fluctuations results from regulation in execution law, regulation in criminal law or probation.</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>Plot shown above does not reflect result of our main objective. We want to illuminate correlation between education level and crime in Turkey prisons. Below you can see total number of each education level and their Pie chart presentation.</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}</span></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>total_ill<span class="ot">=</span><span class="fu">sum</span>(data_criminals<span class="sc">$</span>Illiterate)</span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>total_lit<span class="ot">=</span><span class="fu">sum</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Literate but not Graduated from a School</span><span class="st">`</span>)</span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>total_pri<span class="ot">=</span><span class="fu">sum</span>(p<span class="sc">$</span>Primary)</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a>total_jhs<span class="ot">=</span><span class="fu">sum</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Junior High School and Vocational School at Junior High School Level</span><span class="st">`</span>)</span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>total_hig<span class="ot">=</span><span class="fu">sum</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">High School and Vocational School at High School Level</span><span class="st">`</span>)</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>total_uni<span class="ot">=</span><span class="fu">sum</span>(data_criminals<span class="sc">$</span><span class="st">`</span><span class="at">Higher Education</span><span class="st">`</span>)</span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>vec<span class="ot">=</span><span class="fu">c</span>(total_ill,total_lit,total_pri,total_jhs,total_hig,total_uni)</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>names_vec<span class="ot">=</span><span class="fu">c</span>(<span class="st">"Illiterate"</span>,<span class="st">"Literate"</span>,<span class="st">"Primary"</span>,<span class="st">"J High"</span>,<span class="st">"High Sch"</span>,<span class="st">"High Edu"</span>)</span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(vec)<span class="ot">=</span>names_vec</span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(vec,<span class="at">main =</span> <span class="st">"Number of Convicts to Education Level "</span>, <span class="at">xlab =</span> <span class="st">"Education Level"</span>, <span class="at">ylab =</span> <span class="st">"Number of Convicts"</span>, <span class="at">border =</span> <span class="st">"red"</span>)</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r echo=T, results='hide', error=FALSE, warning=FALSE, message=FALSE}</span></span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>rates_of<span class="ot">=</span><span class="fu">c</span>(<span class="st">"1.7"</span>,<span class="st">"4.6"</span>,<span class="st">"58.8"</span>,<span class="st">"14.1"</span>,<span class="st">"16.8"</span>,<span class="st">"4"</span>)</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(vec, <span class="at">labels =</span> rates_of, <span class="at">main=</span><span class="st">"Pie Chart of Convicts"</span> ,<span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(vec)))</span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, names_vec, <span class="at">cex =</span> <span class="fl">0.8</span>,</span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a>   <span class="at">fill =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(vec)))</span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>As shown on both presentation, convicts education levels and their numbers between 1990-2020 according to TÜİK's data, More than half of convicts has primary education. Illiterate and literate convicts make up only %6,3 of total number. Convicts, who have higher education, has only %4 and junior high school, high school have %14.1 %16.8 respectively. In order to be able to say that education level and probability to commit a crime inversely proportional we need more evidence. Proportions of education levels in society for each year can be useful for deep analytics. For example; what the rate of illiterate people of society for 1995 is can be helpful. Of course these are TÜİK's data which calculated 2023's inflation rate as %61,98. As Stalin said "The death of one person is a tragedy, the death of millions is a statistic" and everyone is a little bit manipulative.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

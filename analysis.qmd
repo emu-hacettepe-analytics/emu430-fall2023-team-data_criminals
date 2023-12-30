@@ -1,8 +1,12 @@
 ---
 title: "Analysis"
 sidebar: false
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-summary: "Show the code"
 ---
-
 
 -   ARE THE CONVICTS WELL EDUCATED?
 
